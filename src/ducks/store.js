@@ -1,4 +1,10 @@
-import { createStore } from 'redux';
-import parallonReducer from "./reducer";
+import { createStore, combineReducers } from 'redux';
+import parallonReducer from "./reducers/peopleReducer";
+import activeUserReducer from "./reducers/activeUser"
 
-export default createStore(parallonReducer)
+const reducers = combineReducers({
+    peopleData: parallonReducer,
+    activeUser: activeUserReducer,
+})
+
+export default createStore(reducers)

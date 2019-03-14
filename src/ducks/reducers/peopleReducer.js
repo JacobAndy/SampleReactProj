@@ -1,5 +1,5 @@
-import defaultData from '../assets/data'
-import { SET_ACTIVE_PERSON } from './actions'
+import defaultData from '../../assets/data'
+import { SET_ACTIVE_PERSON } from '../actions'
 
 const initialState = {
     people: [...defaultData.People],

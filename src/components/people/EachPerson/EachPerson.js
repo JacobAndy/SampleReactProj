@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import "./EachPerson.css";
 
-import { setActivePerson } from '../../../../ducks/actions';
+import { setActivePerson } from '../../../ducks/actions';
 
 class EachPerson extends Component {
     renderPeople = () => {
@@ -32,6 +32,6 @@ class EachPerson extends Component {
         return (<ol>{peopleMap}</ol>)
     }
 }
-const mapStateToProps = state => state,
+const mapStateToProps = state => state.peopleData,
     mapDispatchToProps = { setActivePerson };
 export default connect(mapStateToProps, mapDispatchToProps)(EachPerson)

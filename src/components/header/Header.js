@@ -6,7 +6,7 @@ class People extends React.Component {
     render() {
         return (
             <head>
-                <p>Header</p>
+                Header
             </head>
         )
     }

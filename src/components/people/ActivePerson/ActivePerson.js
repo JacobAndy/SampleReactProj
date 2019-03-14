@@ -14,6 +14,6 @@ function ActivePerson({ people, activePerson }) {
     }
 }
 
-const mapStateToProps = state => state,
+const mapStateToProps = state => state.peopleData,
     mapDispatchToProps = {}
 export default connect(mapStateToProps, mapDispatchToProps)(ActivePerson)
