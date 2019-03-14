@@ -1,13 +1,13 @@
 import React from 'react';
-import "./Header.css";
+import './Footer.css'
 
 class People extends React.Component {
     state = {}
     render() {
         return (
-            <div>
-                <p>hello world</p>
-            </div>
+            <footer>
+                <p>Footer</p>
+            </footer>
         )
     }
 }

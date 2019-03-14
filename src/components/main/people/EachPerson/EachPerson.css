@@ -1,0 +1,9 @@
+.person_active{
+    color:red
+}
+.person_inactive{
+    color:black
+}
+.person_std{
+    list-style: none;
+}

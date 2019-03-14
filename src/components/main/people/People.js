@@ -2,13 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import "./People.css";
 
+import EachPerson from "./EachPerson/EachPerson"
+import ActivePerson from "./ActivePerson/ActivePerson";
+
 class People extends React.Component {
     state = {}
     render() {
-        console.log(this.props)
         return (
             <div>
-                <p>hello world</p>
+                <EachPerson />
+                <ActivePerson />
             </div>
         )
     }
