@@ -1,3 +1,7 @@
+#people-ctn{
+    background: rgb(210, 210, 236);
+    width: 400px;
+}
 .person_active{
     color:red
 }
@@ -5,5 +9,18 @@
     color:black
 }
 .person_std{
+    box-sizing: border-box;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    background:bisque;
+    height: 100px;
     list-style: none;
+}
+.person_std-r-arrow{
+    width: 17px;
+    height: 17px;
 }

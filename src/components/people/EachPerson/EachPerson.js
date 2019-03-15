@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import RightArrow from '../../../assets/icons/play-button.svg'
 import "./EachPerson.css";
 
 import { setActivePerson } from '../../../ducks/actions';
@@ -22,6 +23,7 @@ class EachPerson extends Component {
                     onClick={() => setActivePerson(i)}
                     key={person.name}>
                     {person.name}
+                    <img className="person_std-r-arrow" src={RightArrow} />
                 </li>
             )
         }
@@ -29,7 +31,7 @@ class EachPerson extends Component {
     }
     render() {
         const peopleMap = this.renderPeople()
-        return (<ol>{peopleMap}</ol>)
+        return (<ol id="people-ctn">{peopleMap}</ol>)
     }
 }
 const mapStateToProps = state => state.peopleData,

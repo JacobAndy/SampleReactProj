@@ -1,4 +1,5 @@
 import React from 'react';
+import { getLocalData } from './ducks/actions';
 import {
     BrowserRouter as Router,
     Route,
@@ -11,7 +12,8 @@ import Login from './components/login/Login'
 import Home from './components/home/Home'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (<Route {...rest} render={(props) => {
-    if (localStorage.dogs) {
+    const { fName, lName } = getLocalData()
+    if (fName.length && lName.length) {
         return <Component {...props} />
     }
     else {
