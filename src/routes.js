@@ -29,8 +29,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (<Route {...rest} re
 
 export default (
     <Switch>
-        <Route path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
         <PrivateRoute path="/people" component={People} />
-        <Route path="/" component={Home} />
     </Switch>
 )

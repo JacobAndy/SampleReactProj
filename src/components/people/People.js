@@ -9,7 +9,7 @@ class People extends React.Component {
     state = {}
     render() {
         return (
-            <div>
+            <div className="people-pg">
                 <EachPerson />
                 <ActivePerson />
             </div>

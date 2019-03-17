@@ -1,6 +1,10 @@
+.people-navigation{
+
+}
 #people-ctn{
-    background: rgb(210, 210, 236);
     width: 400px;
+    box-sizing: border-box;
+    padding-left: 30px;
 }
 .person_active{
     color:red
@@ -15,12 +19,31 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 100%;
-    background:bisque;
+    width: 370px;
+    border: 1px solid rgba(119, 119, 119, 0.350);
     height: 100px;
     list-style: none;
 }
 .person_std-r-arrow{
     width: 17px;
     height: 17px;
+}
+.people-mobile-open{
+    margin-left: 0px;
+}
+@media (max-width:768px){
+    .people-mobile-open{
+        margin-left: 0px;
+    }
+    .people-mobile-closed{
+        margin-left: -400px;
+    }
+    #people-ctn{
+        position:absolute;
+        top: 0px;
+        padding:60px 0 0 0px;
+        height: 100vh;
+        background:whitesmoke;
+        z-index: 9;
+    }
 }

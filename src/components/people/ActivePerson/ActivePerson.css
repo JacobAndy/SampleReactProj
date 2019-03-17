@@ -1,0 +1,108 @@
+#main-cntnt{
+    width: 100%;
+    padding: 0px 10px 0px 25px;
+}
+#about-them{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 130px;
+    margin-bottom: 40px;
+}
+#about-them div:nth-child(1){
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 50% 0px 0px;
+    margin-bottom: 15px;
+}
+/* #about-them div:nth-child(1):nth-child(1){
+    width: 100%;
+    background:blue;
+} */
+#about-them img{
+    width: 95px;
+    height: 95px;
+}
+#about-them button{
+    background: #333;
+    width: 120px;
+    height: 35px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    color: white;
+}
+#quoted{
+    min-width: 100%;
+    line-height: 25px;
+}
+.active-person-quoted::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #777;
+  }
+  .active-person-quoted {
+      margin-right: 20px;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  .likes-dislikes{
+      width: 100%;
+      display:flex;
+        justify-content: center;
+        align-items: flex-start;
+  }
+  .likes-dislikes td,.likes-dislikes th{
+      border: 1px solid rgba(68, 68, 68, 0.274);
+  }
+  .likes-dislikes td{
+      height: 55px;
+      box-sizing: border-box;
+      padding: 12px 0px 0px 8px;
+  }
+  .likes-dislikes th{
+      width: 100%;
+      height: 100%;
+      background:white;
+      display:flex;
+      justify-content: flex-start;
+      align-items:center;
+      padding-left: 8px;
+  }
+  .likes-dislikes thead tr{
+      height: 35px;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+  }
+  table{
+      width: 50%;
+  }
+  .ratings{
+      font-size: 14px;
+      width: 120px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+  }
+  tr:nth-child(odd){
+      background:rgba(185, 184, 184, 0.377)
+  }
+  @media (max-width:768px){
+    #main-cntnt{
+        padding: 0px 25px 0px 25px;
+    }
+    #about-them{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 50px;
+        margin-bottom: 20px;
+    }
+}

@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import classnames from 'classnames';
-import RightArrow from '../../../assets/icons/play-button.svg'
 import "./EachPerson.css";
 
+import Burger from './Burger/Burger'
 import { setActivePerson } from '../../../ducks/actions';
 
 class EachPerson extends Component {
+    state = {
+        openBurgerMenu: false
+    }
+    burgerToggle = () => {
+        const burgerVal = this.state.openBurgerMenu;
+        this.setState({ openBurgerMenu: !burgerVal })
+    }
     renderPeople = () => {
         const { people, setActivePerson, activePerson } = this.props;
         return people.map((person, i) => {
@@ -20,10 +27,13 @@ class EachPerson extends Component {
             return (
                 <li
                     className={classes}
-                    onClick={() => setActivePerson(i)}
+                    onClick={() => {
+                        setActivePerson(i)
+                        this.state.openBurgerMenu && this.burgerToggle()
+                    }}
                     key={person.name}>
                     {person.name}
-                    <img className="person_std-r-arrow" src={RightArrow} />
+                    <i className="fa fa-caret-right fa-lg"></i>
                 </li>
             )
         }
@@ -31,7 +41,12 @@ class EachPerson extends Component {
     }
     render() {
         const peopleMap = this.renderPeople()
-        return (<ol id="people-ctn">{peopleMap}</ol>)
+        const { openBurgerMenu } = this.state;
+        return (
+            <div className="people-navigation">
+                <Burger toggle={this.burgerToggle} status={openBurgerMenu} />
+                <ol id="people-ctn" className={openBurgerMenu ? "people-mobile-open" : "people-mobile-closed"}>{peopleMap}</ol>
+            </div>)
     }
 }
 const mapStateToProps = state => state.peopleData,
