@@ -5,12 +5,15 @@ import './App.css';
 import { updateActiveUser } from './ducks/actions';
 
 import Header from './components/header/Header'
+import People from './components/people/People'
+
 class App extends Component {
   render() {
     return (
       <>
         <Header />
-        {routes}
+        <People />
+        {/* {routes} */}
       </>
     );
   }
