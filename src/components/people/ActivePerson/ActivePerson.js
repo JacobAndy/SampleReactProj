@@ -7,9 +7,9 @@ function returnRatings(positiveStars) {
         negative = [];
     for (let i = 0; i < 5; i++) {
         if (i >= positiveStars) {
-            negative.push(<i class="far fa-heart"></i>)
+            negative.push(<i key={i} className="far fa-heart"></i>)
         } else {
-            positive.push(<i class="fas fa-heart"></i>)
+            positive.push(<i key={i} className="fas fa-heart"></i>)
         }
     }
     return { pos: positive, neg: negative }
@@ -60,7 +60,7 @@ function ActivePerson({ people, activePerson }) {
             </div>
         )
     } else {
-        return <p>Please select a user to view</p>
+        return <h2 id="default-pick-user">Please select a user to view</h2>
     }
 }
 

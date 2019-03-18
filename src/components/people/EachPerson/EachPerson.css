@@ -39,10 +39,10 @@
         margin-left: -400px;
     }
     #people-ctn{
-        position:absolute;
+        position:fixed;
         top: 0px;
         padding:60px 0 0 0px;
-        height: 100vh;
+        height: 100%;
         background:whitesmoke;
         z-index: 9;
     }

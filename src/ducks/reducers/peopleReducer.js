@@ -1,7 +1,8 @@
 import defaultData from '../../assets/data'
-import { SET_ACTIVE_PERSON } from '../actions'
+import { SET_ACTIVE_PERSON, SEARCH_FOR_USER } from '../actions'
 
 const initialState = {
+    currentSearch: "",
     people: [...defaultData.People],
     activePerson: null
 }
@@ -13,6 +14,9 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 activePerson: action.payload
             }
+        }
+        case SEARCH_FOR_USER: {
+            return { ...state, currentSearch: action.payload }
         }
         default: {
             return { ...state }

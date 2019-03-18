@@ -16,28 +16,29 @@ class EachPerson extends Component {
     }
     renderPeople = () => {
         const { people, setActivePerson, activePerson } = this.props;
-        return people.map((person, i) => {
-            const classes = classnames(
-                "person_std",
-                {
-                    person_active: activePerson === i,
-                    person_inactive: activePerson !== i,
-                }
+        return people.filter(person => person.name.toLowerCase().includes(this.props.currentSearch))
+            .map((person, i) => {
+                const classes = classnames(
+                    "person_std",
+                    {
+                        person_active: activePerson === i,
+                        person_inactive: activePerson !== i,
+                    }
+                )
+                return (
+                    <li
+                        className={classes}
+                        onClick={() => {
+                            setActivePerson(i)
+                            this.state.openBurgerMenu && this.burgerToggle()
+                        }}
+                        key={person.name}>
+                        {person.name}
+                        <i className="fa fa-caret-right fa-lg"></i>
+                    </li>
+                )
+            }
             )
-            return (
-                <li
-                    className={classes}
-                    onClick={() => {
-                        setActivePerson(i)
-                        this.state.openBurgerMenu && this.burgerToggle()
-                    }}
-                    key={person.name}>
-                    {person.name}
-                    <i className="fa fa-caret-right fa-lg"></i>
-                </li>
-            )
-        }
-        )
     }
     render() {
         const peopleMap = this.renderPeople()
